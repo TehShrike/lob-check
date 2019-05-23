@@ -10,7 +10,9 @@ module.exports = async({ apiKey, address, check }) => {
 	})
 	const lobAddress = await getOrCreateAddress(lob, address)
 
-	const createdCheck = await lob.checks.create(makeObjectSnakeCase(Object.assign({}, check, { to: lobAddress.id })))
+	const createdCheck = makeObjectCamelCase(
+		await lob.checks.create(makeObjectSnakeCase(Object.assign({}, check, { to: lobAddress.id })))
+	)
 
 	return createdCheck
 }
