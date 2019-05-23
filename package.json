@@ -1,0 +1,34 @@
+{
+  "name": "lob-check",
+  "version": "1.0.0",
+  "description": "Send checks from Lob in an easily scriptable manner",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test-automated.js | tap-color"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TehShrike/lob-check.git"
+  },
+  "keywords": [
+    "lob",
+    "check"
+  ],
+  "author": "TehShrike",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/TehShrike/lob-check/issues"
+  },
+  "homepage": "https://github.com/TehShrike/lob-check#readme",
+  "devDependencies": {
+    "tap-color": "^1.1.0",
+    "zora": "^3.0.1"
+  },
+  "dependencies": {
+    "just-camel-case": "^4.0.2",
+    "just-snake-case": "^1.1.0",
+    "lob": "^6.0.5",
+    "map-obj": "^3.1.0",
+    "md5-hex": "^3.0.0"
+  }
+}
