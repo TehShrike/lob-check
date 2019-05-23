@@ -1,6 +1,6 @@
 {
   "name": "lob-check",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Send checks from Lob in an easily scriptable manner",
   "main": "index.js",
   "scripts": {
