@@ -11,6 +11,7 @@ lobCheck({
 		addressState: `NE`,
 		addressZip: `68132`,
 	},
+	addressId: 'adr_40b76d26dd074094',
 	check: {
 		from: `adr_2aa6e965740a9613`,
 		bankAccount: `bank_647a2fce6ff7148`,

@@ -4,14 +4,17 @@ const hashObject = require(`./hash-object.js`)
 const { makeObjectSnakeCase, makeObjectCamelCase } = require(`./object-case.js`)
 
 
-module.exports = async({ apiKey, address, check }) => {
+module.exports = async({ apiKey, address, addressId, check }) => {
 	const lob = lobFactory(apiKey, {
 		userAgent: `lob-check`,
 	})
-	const lobAddress = await getOrCreateAddress(lob, address)
+
+	const lobAddressId = typeof addressId === 'string'
+		? addressId
+		: (await getOrCreateAddress(lob, address)).id
 
 	const createdCheck = makeObjectCamelCase(
-		await lob.checks.create(makeObjectSnakeCase(Object.assign({}, check, { to: lobAddress.id })))
+		await lob.checks.create(makeObjectSnakeCase(Object.assign({}, check, { to: lobAddressId })))
 	)
 
 	return createdCheck
